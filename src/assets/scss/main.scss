@@ -1,0 +1,93 @@
+// Setup
+
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+
+// Basics
+@import "basics/typography";
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/base";
+@import "basics/links";
+@import "basics/modals";
+@import "basics/animations";
+@import "basics/buttons";
+
+// Pages
+@import "pages/editor";
+@import "pages/home";
+@import "pages/about";
+@import "pages/dashboard";
+@import "pages/templates";
+
+// Components
+@import "components/UserForm";
+@import "components/EditorSideNav";
+@import "components/EditPanel";
+@import "components/Navbar";
+@import "components/TemplateList";
+@import "components/templateComponents";
+@import "components/UserThumb";
+@import "components/SiteMap";
+@import "components/Chat";
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.brand {
+  color: $clr1;
+}
+
+.user-auth-form {
+  width: 600px;
+}
+
+.content-wrapper {
+  padding-top: $navHeight;
+}
+
+.main-navbar.in-editor + .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  .web-site-container {
+    max-height: calc(100vh - #{$navHeight});
+    overflow: auto;
+  }
+}
+
+.main-navbar.in-editor.editor-expanded + .content-wrapper {
+  padding: 0;
+
+  .web-site-container {
+    max-height: initial;
+    overflow: initial;
+    padding: 0;
+  }
+
+  .web-wrapper {
+    padding: 0;
+    cursor: initial;
+  }
+
+  [data-role="section"] {
+    border: 0;
+  }
+
+  [data-role="anchor"] {
+    visibility: hidden;
+  }
+
+  .toolbar {
+    display: none;
+  }
+
+  * {
+    outline: 0 !important;
+  }
+}

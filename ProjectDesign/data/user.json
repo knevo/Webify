@@ -1,0 +1,16 @@
+{
+    "_id": "234k32nknasdad",
+    "nickName": "Tal Azenkot",
+    "imageUrl": "http://www.some.url/img.jpg",
+    "email": "talazenkot@gmail.com",
+    "password": "somePassword",
+    "isAdmin": true,
+    "joinedAt": 1991274912481,
+    "mails": [],
+    "notifications": [
+        {
+            "isRead": false,
+            "data": {}
+        }
+    ]
+}

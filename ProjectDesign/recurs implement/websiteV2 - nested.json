@@ -1,0 +1,44 @@
+{
+    "_id": "43242382lasdflasdm",
+    "settings": {
+        "templateId": "423jkb4jk23",
+        "webName": "Webify",
+        "createdBy": "minified-user",
+        "pages": [
+            {
+                "name": "home",
+                "route": "/"
+            }
+        ]
+    },
+    "rootElement": {
+        "prefs": {},
+        "_id": "234322344",
+        "tagName": "div",
+        "children": [
+            {
+                "_id": "234324",
+                "tagName": "div",
+                "prefs": {
+                    "id": "someDiv",
+                    "className": "container"
+                },
+                "children": [
+                    {
+                        "_id": "234322344",
+                        "tagName": "span",
+                        "prefs": {
+                            "style": {
+                                "bgColor": "red"
+                            },
+                            "className": "someclass"
+                        },
+                        "children": [
+                            "nevo"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

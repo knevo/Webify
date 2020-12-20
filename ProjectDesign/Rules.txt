@@ -1,0 +1,13 @@
+_rootElement: // div
+	accepts: role['rootSection'] // tags example with this role: Navbar, Header, Main, Section, Footer
+
+rootSection:
+	accepts: role[container,image,video, title, form, gallery] // image, video / iframe, div, h1, form
+
+container:
+	accepts: role[container,image,video, title,text, form, gallery] 
+
+form:
+	accepts: role[title,text,input] 
+
+image,video,title,text: // nothing

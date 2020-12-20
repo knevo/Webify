@@ -1,0 +1,22 @@
+.MuiAvatar-colorDefault {
+    background-color: $clr1 !important;
+}
+
+.MuiButton-containedPrimary {
+    background-color: $clr2 !important;
+
+    &:hover {
+        background-color: lighten($clr2, 5%) !important;
+    }
+}
+
+.MuiTypography-colorPrimary {
+    color: $clr3;
+}
+
+.user-form-errors {
+    text-align: center;
+    margin-top: 24px;
+    color: red;
+    font-size: 15px;
+}

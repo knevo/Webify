@@ -1,0 +1,256 @@
+.editor {
+  flex-grow: 1;
+  animation: scaleinsoft 0.3s ease-in-out;
+
+  @include for-mobile-layout {
+    display: none;
+  }
+}
+
+.editor-mobile-message {
+  display: none;
+  flex-grow: 1;
+  color: $clr2;
+  font-size: rem(35px);
+  text-align: center;
+
+  @include for-mobile-layout {
+    display: flex;
+  }
+}
+
+[draggable="true"] {
+  cursor: grab;
+}
+
+.web-site-container {
+  scroll-behavior: smooth;
+  flex-grow: 1;
+  padding: 5px;
+
+  .web-wrapper {
+    padding: 15px;
+    min-height: 100%;
+    cursor: pointer;
+
+    &:hover {
+      outline: 1px solid blue;
+    }
+
+    *:not(.toolbar):hover {
+      outline: solid 2px $clr2;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  * {
+    position: relative;
+  }
+}
+
+.web-wrapper:empty::before {
+  content: "Start Dragging to here!";
+  font-size: 60px;
+  color: darken($clr5, 10%);
+  text-align: center;
+  position: absolute;
+  border: 5px dashed darken($clr5, 10%);
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  z-index: 50;
+
+  & > * {
+    color: white;
+    background: $clr2;
+    display: block;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: initial;
+    width: 23px;
+    height: 23px;
+
+    &:hover {
+      outline: none !important;
+      color: $clr1;
+    }
+  }
+}
+
+*:hover > .toolbar {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+*:last-child > .toolbar {
+  & > .fa-arrow-alt-circle-down {
+    color: gray !important;
+    cursor: not-allowed;
+  }
+}
+
+*:first-child > .toolbar {
+  & > .fa-arrow-alt-circle-up {
+    color: gray !important;
+    cursor: not-allowed;
+  }
+}
+
+[data-orientation="row"] > * > .toolbar {
+  .fa-arrow-alt-circle-down,
+  .fa-arrow-alt-circle-up {
+    transform: rotate(-90deg);
+  }
+}
+
+[data-role="section"],
+[data-role="nav"],
+[data-role="form"],
+[data-role="card"] {
+  outline: 1px dashed gray;
+}
+
+[data-role="anchor"]:before {
+  font-family: "FontAwesome";
+  content: "\2693";
+}
+
+.image-wrapper {
+  img {
+    outline: none !important;
+  }
+}
+
+.editor-expander {
+  transition: initial;
+  z-index: 100;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  top: calc(100vh - 65px);
+  left: calc(100% - 65px);
+  cursor: pointer;
+  background: #fff;
+  border-radius: 5px;
+  color: rgba($clr2, 0.8);
+  border: 0px solid #d3d3d3;
+  box-shadow: 0 0 7px rgba($color: #000000, $alpha: 0.35);
+  outline: none;
+  font-size: rem(20px);
+
+  &:hover {
+    color: $clr1;
+  }
+}
+
+.dragHoverTop,
+.dragHoverBottom {
+  transition: padding 0.3s ease;
+}
+
+.dragHoverBottom:before,
+.dragHoverTop:before {
+  background: rgba(14, 116, 175, 0.774);
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 20;
+  outline: 0 !important;
+}
+
+[data-orientation="column"] {
+  & > :not([data-orientation]),
+  & {
+    &.dragHoverTop {
+      padding-top: 30px !important;
+    }
+
+    &.dragHoverBottom {
+      padding-bottom: 30px !important;
+    }
+
+    &.dragHoverBottom:before,
+    &.dragHoverTop:before {
+      height: 30px;
+      width: 100%;
+      left: 0;
+    }
+
+    &.dragHoverBottom:before {
+      bottom: 0;
+    }
+
+    &.dragHoverTop:before {
+      top: 0;
+    }
+  }
+}
+
+[data-orientation="row"] {
+  & > :not([data-orientation]),
+  & {
+    &.dragHoverTop {
+      padding-left: 30px !important;
+    }
+
+    &.dragHoverBottom {
+      padding-right: 30px !important;
+    }
+
+    &.dragHoverBottom:before,
+    &.dragHoverTop:before {
+      height: 100%;
+      width: 30px;
+      top: 0;
+    }
+
+    &.dragHoverBottom:before {
+      right: 0;
+    }
+
+    &.dragHoverTop:before {
+      left: 0;
+    }
+  }
+}
+
+[data-selected="true"] {
+  outline: 3px solid rgb(253, 81, 81) !important;
+}
+
+[data-role="text"] {
+  & > span {
+    pointer-events: none;
+    outline: 0 !important;
+  }
+
+  &[data-selected="true"] {
+    & > span {
+      cursor: text;
+      pointer-events: initial;
+    }
+  }
+}
+
+[data-role="form"] {
+  & > *[data-role="input"] {
+    input,
+    textarea {
+      pointer-events: none;
+      outline: none !important;
+    }
+  }
+}

@@ -1,0 +1,328 @@
+.edit-panel-container {
+    color: #514c4c;
+    direction: rtl;
+    height: 100%;
+    overflow-y: auto;
+    margin-top: 15px;
+
+    input[type="text"],
+    textarea {
+        font-family: inherit;
+        padding: 10px;
+        resize: none;
+        border-radius: 5px;
+        color: $clr2;
+        border: 0px solid #d3d3d3;
+        box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.15);
+        flex-basis: 100%;
+    }
+
+    &>* {
+        direction: ltr;
+    }
+
+    &>section {
+        padding: 15px;
+    }
+
+    .input-group,
+    .input-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 38px;
+        flex-wrap: wrap;
+
+        & label {
+            font-size: rem(17px);
+        }
+
+        .MuiInputBase-root {
+            color: #514c4c;
+        }
+
+    }
+
+    .input-group {
+        &>*:nth-child(2):not(.MuiSwitch-root):not(.auto-switch-container):not(button):not(label) {
+            flex-basis: 43%;
+        }
+    }
+
+    .input-wrapper,
+    .input-group {
+        .bottom-item {
+            margin-top: 10px;
+            flex-basis: 100%;
+        }
+    }
+
+    .slider-input-container {
+        position: relative;
+        height: 0;
+        transition: .3s;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        flex-basis: 100%;
+
+        .MuiButtonBase-root {
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            min-width: initial;
+            transform: translateY(-50%);
+            padding: 7px;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        &.open {
+            margin-top: 10px;
+            visibility: visible;
+            height: 40px;
+            opacity: 1;
+        }
+    }
+
+    .input-group:not(:last-child),
+    .input-wrapper:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .MuiButtonGroup-root {
+        display: flex;
+
+        button {
+            flex: 1 1;
+            font-family: inherit;
+            height: 30px;
+
+            &.active {
+                background-color: $clr2;
+                color: white;
+            }
+        }
+    }
+
+    .colorpick-container {
+        .fas:before {
+            mix-blend-mode: exclusion;
+            color: #fff;
+        }
+    }
+
+    .fa-question-circle {
+        margin-left: 5px;
+    }
+
+    .detail-toggle {
+        margin-left: 7px;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .detailed-range {
+        visibility: hidden;
+        height: 0;
+        transition: .3s;
+        overflow: hidden;
+        opacity: 0;
+
+        &.open {
+            padding: 10px 7px;
+            visibility: visible;
+            height: 65px;
+            opacity: 1;
+        }
+    }
+
+    .detail-toggle.open {
+        transform: rotate(180deg);
+    }
+
+    .range-container {
+        position: relative;
+        align-items: center;
+    }
+
+    .MuiSlider-rail,
+    .MuiSlider-track {
+        height: 4px;
+        border-radius: 2px;
+    }
+
+    .MuiSlider-thumb {
+        height: 15px;
+        width: 15px;
+    }
+
+    .auto-switch-container {
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .upload-site-thumbnail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .site-thumbnail {
+        flex-basis: 100%;
+        @include aspect-ratio(4, 3);
+    }
+}
+
+.detail-form {
+    flex-wrap: nowrap !important;
+
+    &>*:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    .MuiFormControl-root {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
+
+.colorpick-container {
+    position: relative;
+
+    .chrome-picker {
+        position: absolute;
+        z-index: 81;
+    }
+
+    .colorpicker-cover {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 80;
+    }
+}
+
+.MuiTooltip-popper {
+    * {
+        font-size: 13px !important;
+        font-family: OpenSans !important;
+        font-weight: normal !important;
+    }
+}
+
+.url-input {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    background: red;
+    z-index: 15;
+}
+
+.api-media-search-modal {
+    padding: 15px;
+    height: 80vh;
+    width: 900px;
+
+    .actions-panel {
+        margin-bottom: 15px;
+
+        &>* {
+            flex-grow: 1;
+        }
+    }
+
+    input {
+        font-family: inherit;
+        padding: 10px;
+        resize: none;
+        border-radius: 5px;
+        color: $clr2;
+        border: 0px solid #d3d3d3;
+        box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
+        max-width: 350px;
+    }
+}
+
+.cards-container {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.api-media-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 10px;
+    width: 100%;
+    padding-right: 5px;
+
+    &>li {
+        cursor: pointer;
+
+        img {
+            transition: .3s ease-in-out;
+        }
+
+        .img-thumbnail-wrapper {
+            @include aspect-ratio(4, 3);
+        }
+
+        .video-thumbnail-wrapper {
+            @include aspect-ratio(16, 9);
+        }
+
+        .media-title {
+            display: block;
+            padding: 5px;
+            height: 70px;
+            width: 100%;
+            text-overflow: ellipsis;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.link-text-input-group {
+    margin-top: 15px;
+    flex-basis: 100%;
+    position: relative;
+
+    textarea {
+        width: 100%;
+        display: block;
+    }
+
+    .MuiButtonBase-root {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        min-width: initial;
+        transform: translateY(-50%);
+        padding: 7px;
+    }
+}
+
+.element-name-section {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    label {
+        margin-bottom: 10px;
+    }
+
+}

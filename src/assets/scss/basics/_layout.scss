@@ -1,0 +1,25 @@
+.container {
+    max-width: $wide-breakpoint;
+    margin: 0 auto;
+    width: 100%;
+    // padding-left: 10px;
+    // padding-right: 10px;
+    padding: 10px;
+
+
+    @include for-mobile-layout {
+        max-width: initial;
+    }
+
+    @include for-tablet-layout {
+        max-width: $mobile-breakpoint;
+    }
+
+    @include for-normal-layout {
+        max-width: $tablet-breakpoint;
+    }
+
+    @include for-wide-layout {
+        max-width: $normal-breakpoint;
+    }
+}

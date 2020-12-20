@@ -1,0 +1,150 @@
+.web-wrapper {
+  margin: 0 auto;
+
+  & > * {
+    max-width: 100%;
+  }
+}
+
+[data-aspect="square"] {
+  @include aspect-ratio(1, 1);
+  width: 100%;
+}
+
+[data-aspect="16-9"] {
+  @include aspect-ratio(16, 9);
+  width: 100%;
+}
+
+[data-aspect="4-3"] {
+  @include aspect-ratio(4, 3);
+  width: 100%;
+}
+
+[data-role="section"],
+[data-role="nav"] {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  @include for-mobile-layout {
+    flex-wrap: wrap;
+  }
+}
+
+[data-role="section"] {
+  @include for-normal-layout {
+    flex-wrap: wrap;
+  }
+}
+
+.iframe-wrapper,
+.map-wrapper {
+  & > iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+iframe {
+  border: 0;
+  display: block;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+
+  img {
+    border-radius: inherit;
+    pointer-events: none;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.generic-container,
+[data-role="card"],
+[data-role="text"] {
+  display: flex;
+}
+
+[data-role="card"] {
+  flex: 1;
+
+  img {
+    width: 100%;
+  }
+
+  @include for-normal-layout {
+    flex-basis: 30%;
+  }
+
+  @include for-tablet-layout {
+    flex-basis: 40%;
+  }
+
+  @include for-mobile-layout {
+    flex-basis: 100%;
+  }
+}
+
+[data-role="text"] {
+  flex-direction: row;
+  word-break: break-word;
+
+  span {
+    flex-grow: 1;
+  }
+
+  & > .toolbar {
+    top: initial;
+    bottom: -20px;
+    right: 0;
+  }
+}
+
+[data-role="button"] {
+  border: 0;
+  font: inherit;
+  color: inherit;
+}
+
+[data-role="form"] {
+  display: flex;
+
+  & > *[data-role="text"] {
+    margin-bottom: 5px;
+    flex-grow: 0;
+  }
+
+  & > *[data-role="input"] {
+    margin-bottom: 10px;
+    display: block;
+
+    input,
+    textarea {
+      font-family: OpenSans;
+      font-size: rem(14px);
+      width: 100%;
+      padding: 6px;
+      background-color: white;
+      border: 1px solid rgba(48, 49, 49, 0.55);
+      color: rgba(48, 49, 49, 0.55);
+      display: block;
+      resize: none;
+      height: 100%;
+      min-height: inherit;
+    }
+  }
+}
+
+#el-zf8X3f {
+  * {
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 1), 0 2px 3px rgba(0, 0, 0, 0.3);
+  }
+}

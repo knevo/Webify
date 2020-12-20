@@ -1,0 +1,39 @@
+.cta-button-1 {
+    background: $clr1;
+    color: white;
+    font-size: rem(20px);
+    border: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 2px 2px 3px rgba(#000, 0.3);
+
+    &:hover {
+        background: darken($clr1, 7%);
+        text-decoration: none;
+    }
+}
+
+.mega-button {
+    display: block;
+    width: 100%;
+    background: #FFF;
+    border: #949494 3px solid;
+    text-align: center;
+    transition: .15s;
+    padding: 10px;
+    font-family: OpenSans-Bold;
+    color: #949494;
+    font-size: rem(25px);
+    opacity: 0.7;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+        color: $clr2;
+        border-color: $clr2;
+    }
+}

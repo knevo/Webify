@@ -1,0 +1,25 @@
+
+signup and login components
+regular modal call method refactor
+templates gallery modal
+notification updates
+chatbox cmp
+
+
+backend crud
+backend sockets
+
+
+home text:
+features
+footer
+about
+
+templates
+
+front end service
+
+website publish
+
+statistics
+admin panel

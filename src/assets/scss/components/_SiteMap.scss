@@ -1,0 +1,109 @@
+.anchor-sitemap-title {
+    text-align: center;
+    background: #ff00002b;
+    margin: 0 15px;
+    padding: 10px;
+    font-size: 17px;
+    position: relative;
+    border-radius: 5px;
+
+    button {
+        position: absolute;
+        bottom: 4px;
+        right: 2px;
+        color: red;
+        background: transparent;
+        font-size: rem(12px);
+        border: 0;
+    }
+}
+
+.sitemap-list {
+    &.main-list {
+        padding: 15px;
+    }
+
+    .sitemap-list {
+        margin-left: 30px;
+    }
+
+    .cmpName {
+        display: block;
+        cursor: pointer;
+        padding: 3px 0px 3px 0px;
+        text-transform: capitalize;
+        border-radius: 0 15px 15px 0;
+        position: relative;
+
+        &:hover,
+        &.active {
+            background: #c3c3c3;
+            color: $clr2;
+
+            .sitemap-edit-btn,
+            .sitemap-anchor-btn {
+                display: block;
+            }
+        }
+
+        &::before {
+            transition: .2s transform linear;
+            content: "\f054";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+            margin: 0 7px;
+            opacity: 0.4;
+        }
+
+
+        &.expanded {
+            &::before {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .expandable {
+        &>.cmpName {
+            &::before {
+                opacity: 1;
+            }
+
+        }
+    }
+}
+
+.sitemap-edit-btn,
+.sitemap-anchor-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: none;
+    border-radius: 50%;
+    border: 0;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    background: transparent;
+    opacity: 0.7;
+    transition: initial;
+    padding: 0;
+
+    &:hover {
+        opacity: 1;
+        background: darken(#c3c3c3, 10%);
+    }
+}
+
+button.sitemap-anchor-btn {
+    right: 30px;
+    display: none;
+    color: red;
+}

@@ -1,0 +1,193 @@
+.editor-side-nav {
+    min-width: 300px;
+    width: 300px;
+    background-color: #e6e9ec;
+    border-right: 1px solid #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - #{$navHeight});
+    transition: .3s width, .3s min-width;
+
+    .side-nav-item {
+        background-color: #fff;
+        color: $clr2;
+        border: none;
+        font-size: 1rem;
+        border-radius: 3px;
+        width: 130px;
+        height: 70px;
+        margin: 5px;
+        padding: 2px;
+        cursor: pointer;
+
+        &:hover {
+            color: $clr1;
+        }
+    }
+
+
+    .MuiExpansionPanelSummary-root.Mui-expanded {
+        min-height: auto;
+
+        .MuiExpansionPanelSummary-content.Mui-expanded {
+            margin: 0;
+        }
+    }
+
+    .MuiExpansionPanelDetails-root {
+        background-color: #e6e9ec;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .editor-section-title {
+        background-color: #f6f6f6;
+        font-size: rem(15px);
+        color: black;
+    }
+}
+
+.editor-item-title {
+    font-size: 1rem;
+}
+
+.editor-cmps-title {
+    font-size: 1rem;
+}
+
+.editor-cmps-icon {
+    font-size: 1.4rem;
+}
+
+.editor-fields-container {
+    flex-grow: 1;
+}
+
+.editor-btn-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-auto-rows: 65px;
+    gap: 10px;
+    flex-grow: 1;
+
+    button {
+        background: #fff;
+        border-radius: 5px;
+        color: rgba($clr2, 0.8);
+        border: 0px solid #d3d3d3;
+        box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.15);
+        outline: none;
+        transition: 0.1s;
+        font-size: rem(13px);
+
+        &:hover {
+            color: $clr1;
+            transition: color 0.2s ease;
+
+            .rect {
+                background: $clr1;
+            }
+
+        }
+
+        i {
+            display: block;
+            font-size: 25px;
+            margin: 5px 0;
+            pointer-events: none;
+        }
+
+        .rect {
+            background: $clr2;
+            border-radius: 5px;
+            height: rem(20px);
+            width: rem(50px);
+            margin: 5px auto;
+            transition: 0.1s;
+        }
+    }
+
+    .rect {
+        background: $clr2;
+        border-radius: 5px;
+        height: rem(20px);
+        width: rem(50px);
+        margin: 5px auto;
+        transition: 0.1s;
+    }
+}
+
+.editor-expanded+.content-wrapper {
+    .editor-side-nav {
+        padding: 0;
+        width: 0;
+        min-width: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.top-sidenav-btns {
+    display: flex;
+    align-items: baseline;
+    background-color: $clr2;
+
+    i {
+        pointer-events: none;
+    }
+
+    :hover {
+        color: $clr1;
+        transition: color 0.2s ease;
+    }
+
+    div {
+        flex-direction: column;
+        flex: 1 1;
+        font-size: 1rem;
+        cursor: pointer;
+        background: transparent;
+        padding: 7px 0;
+        margin: 0;
+        color: #fff;
+        border: none;
+        font-size: rem(14px);
+
+        h2 {
+            pointer-events: none;
+            font-size: rem(13px);
+            padding-top: 5px;
+        }
+    }
+
+    .active {
+        background: #e6e9ec;
+        color: $clr2;
+    }
+}
+
+.bottom-sidenav-btns {
+    display: flex;
+    padding: 5px;
+    align-items: baseline;
+    background-color: $clr2;
+
+    button {
+        flex: 1 1;
+        display: block;
+        cursor: pointer;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        color: #fff;
+        border: none;
+        transition: 0.1s;
+        font-size: rem(18px);
+
+        &:hover {
+            color: $clr1;
+            transition: color 0.2s ease;
+        }
+    }
+}

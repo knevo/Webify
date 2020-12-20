@@ -1,0 +1,38 @@
+{
+    "_rootElement": {
+        "_id": "_rootElement",
+        "htmlTagName": "div",
+        "role": "_root",
+        "prefs": {
+            "className": "web-wrapper",
+            "style": {
+                "maxWidth": 1300
+            }
+        },
+        "children": [
+            {
+                "cmpId": "el-qfc7WL"
+            },
+            {
+                "cmpId": "el-OHXQwB"
+            }
+        ]
+    },
+    "el-qfc7WL": {
+        "_id": "el-qfc7WL",
+        "cmpName": "Navigation",
+        "htmlTagName": "nav",
+        "role": "nav",
+        "prefs": {
+            "style": {
+                "flexDirection": "row",
+                "minHeight": 103
+            }
+        },
+        "children": [
+            {
+                "cmpId": "el-PlTxx7"
+            }
+        ]
+    }
+}

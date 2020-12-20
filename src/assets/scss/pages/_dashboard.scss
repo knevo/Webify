@@ -1,0 +1,126 @@
+.dashboard-wrapper {
+    display: flex;
+    height: calc(100vh - #{$navHeight});
+}
+
+.dashboard-nav {
+    flex-basis: 300px;
+    padding: 20px;
+    border-right: 1px solid $clr5;
+}
+
+.dashboard-nav-container {
+    background: white;
+    color: $clr2;
+
+    .user-thumb {
+        width: 120px;
+        height: 120px;
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+
+
+    ul {
+        li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        li:last-child:not(:first-child) {
+            border-top: 1px solid lightgray;
+            padding-top: 10px;
+        }
+    }
+}
+
+.dashboard-nav-title {
+    background: $clr2;
+    color: white;
+}
+
+.dashboard-main-content {
+    padding: 20px;
+    flex-grow: 1;
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    .wap-list-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+}
+
+.websites-list {
+    margin-top: 10px;
+    margin-left: 20px;
+
+    &>li:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
+
+.modal-content .share-website {
+    width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    &>*:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 15px !important;
+        font-size: rem(30px);
+    }
+
+    img {
+        object-fit: cover;
+    }
+
+    .brand-link {
+        font-size: rem(20px);
+    }
+
+    .copy-link-section {
+        flex-wrap: wrap;
+
+        button {
+            width: rem(60px);
+        }
+
+        input {
+            text-align: center;
+            flex-grow: 1;
+        }
+    }
+
+    .mega-button {
+        border-width: 2px;
+        font-size: rem(16px);
+        padding: 6px;
+    }
+}
+
+.new-website-btn {
+    width: 300px;
+    height: 200px;
+    background: #FFF;
+    border: #949494 5px solid;
+    transition: .15s;
+    font-family: OpenSans-Bold;
+    color: #949494;
+    font-size: rem(80px);
+    opacity: 0.7;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+        color: $clr2;
+        border-color: $clr2;
+    }
+}

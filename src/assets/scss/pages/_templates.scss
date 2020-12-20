@@ -1,0 +1,12 @@
+.templates-container {
+  padding: 0 20px;
+  .template-menu {
+    padding-top: 20px;
+    margin-bottom: 20px;
+    & > h2 {
+      text-align: center;
+      font-size: rem(40px);
+      color: $clr2;
+    }
+  }
+}
